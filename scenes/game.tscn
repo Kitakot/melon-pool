@@ -3,6 +3,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://dh01dnmy81n80" path="res://materials/ball_material.tres" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://26kf6cb5ihpm" path="res://icon.svg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://ci8ddphdysbm8" path="res://scenes/player_ball.gd" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://b2nctyfw0lab4" path="res://Objects/Ball.tscn" id="4_lbhrr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2xhk2"]
 radius = 16.0
@@ -33,24 +34,16 @@ shot_power = 1.53
 shape = SubResource("CircleShape2D_2xhk2")
 
 [node name="Icon" type="Sprite2D" parent="RigidBody2D" unique_id=234126938]
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_uwrxv")
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=197838738]
-position = Vector2(980, 402)
-physics_material_override = ExtResource("1_lnu2h")
-linear_velocity = Vector2(-50, 0)
-angular_damp = 100.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=2138820975]
-shape = SubResource("CircleShape2D_2xhk2")
-
-[node name="Icon" type="Sprite2D" parent="RigidBody2D2" unique_id=1364627599]
-texture = ExtResource("1_uwrxv")
+[node name="RigidBody2D2" parent="." unique_id=707908172 instance=ExtResource("4_lbhrr")]
+position = Vector2(835, 402)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=892732584]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1960704272]
-position = Vector2(601, 650)
+position = Vector2(601, 720)
 shape = SubResource("WorldBoundaryShape2D_2xhk2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1436218525]
@@ -62,5 +55,5 @@ position = Vector2(0, 372)
 shape = SubResource("WorldBoundaryShape2D_iywne")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=894750441]
-position = Vector2(1150, 319)
+position = Vector2(1280, 319)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
