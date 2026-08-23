@@ -7,6 +7,9 @@ var shot_vector = Vector2()
 @export var shot_power = 1.0
 @export var epsilon = 10
 
+func _ready() -> void:
+	add_to_group("balls")
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and ready_to_shoot:

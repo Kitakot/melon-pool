@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://26kf6cb5ihpm" path="res://icon.svg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://ci8ddphdysbm8" path="res://scenes/player_ball.gd" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://b2nctyfw0lab4" path="res://Objects/Ball.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://fwl8ln380t7b" path="res://Objects/pocket.tscn" id="5_iywne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2xhk2"]
 radius = 16.0
@@ -22,15 +23,24 @@ normal = Vector2(-1, 0)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lbhrr"]
 bounce = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gx2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(900, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(20, 450)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iywne"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(20, 450)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gx2"]
+size = Vector2(900, 20)
+
 [node name="Node2D" type="Node2D" unique_id=874810127]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1186755015]
+[node name="Cueball" type="RigidBody2D" parent="." unique_id=1186755015]
 position = Vector2(493.761, 402)
 physics_material_override = ExtResource("1_lnu2h")
 linear_velocity = Vector2(50, 0)
@@ -39,10 +49,10 @@ angular_damp = 100.0
 script = ExtResource("2_lbhrr")
 shot_power = 1.53
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1585950942]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cueball" unique_id=1585950942]
 shape = SubResource("CircleShape2D_2xhk2")
 
-[node name="Icon" type="Sprite2D" parent="RigidBody2D" unique_id=234126938]
+[node name="Icon" type="Sprite2D" parent="Cueball" unique_id=234126938]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_uwrxv")
 
@@ -74,7 +84,7 @@ position = Vector2(616, 127)
 physics_material_override = SubResource("PhysicsMaterial_lbhrr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/CushonTop" unique_id=271410761]
-shape = SubResource("RectangleShape2D_a4gx2")
+shape = SubResource("RectangleShape2D_iywne")
 
 [node name="Icon" type="Sprite2D" parent="Table/CushonTop" unique_id=281186981]
 scale = Vector2(7.2, 0.156)
@@ -93,10 +103,10 @@ texture = ExtResource("1_uwrxv")
 
 [node name="CushonRight2" type="StaticBody2D" parent="Table" unique_id=1227007184]
 position = Vector2(147, 363)
-physics_material_override = SubResource("PhysicsMaterial_lbhrr")
+physics_material_override = SubResource("PhysicsMaterial_iywne")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/CushonRight2" unique_id=920839212]
-shape = SubResource("RectangleShape2D_lbhrr")
+shape = SubResource("RectangleShape2D_p57ef")
 
 [node name="Icon" type="Sprite2D" parent="Table/CushonRight2" unique_id=878807838]
 scale = Vector2(0.156, 3.6)
@@ -112,3 +122,6 @@ shape = SubResource("RectangleShape2D_a4gx2")
 [node name="Icon" type="Sprite2D" parent="Table/CushonBottom" unique_id=495534325]
 scale = Vector2(7.2, 0.156)
 texture = ExtResource("1_uwrxv")
+
+[node name="Pocket" parent="Table" unique_id=2089654417 instance=ExtResource("5_iywne")]
+position = Vector2(616.00006, 164)

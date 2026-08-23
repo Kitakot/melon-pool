@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://fwl8ln380t7b"]
+
+[ext_resource type="Script" uid="uid://qmvwcrnxp44p" path="res://scenes/pocket.gd" id="1_6imce"]
+[ext_resource type="Texture2D" uid="uid://26kf6cb5ihpm" path="res://icon.svg" id="2_tr6x7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11huh"]
+radius = 64.0
+
+[node name="Pocket" type="Area2D" unique_id=2089654417]
+scale = Vector2(0.36489052, 0.36489052)
+script = ExtResource("1_6imce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087370647]
+shape = SubResource("CircleShape2D_11huh")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1350626404]
+texture = ExtResource("2_tr6x7")
