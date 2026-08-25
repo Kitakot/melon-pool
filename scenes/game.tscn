@@ -21,18 +21,21 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2xhk2"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p57ef"]
 
 [node name="Node2D" type="Node2D" unique_id=874810127]
 
 [node name="Cueball" type="RigidBody2D" parent="." unique_id=1186755015]
 position = Vector2(493.761, 402)
+mass = 0.17
 physics_material_override = ExtResource("1_lnu2h")
 linear_velocity = Vector2(50, 0)
-linear_damp = 0.6
+linear_damp = 1.0
 angular_damp = 100.0
 script = ExtResource("2_lbhrr")
-shot_power = 1.53
+shot_power = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cueball" unique_id=1585950942]
 shape = SubResource("CircleShape2D_2xhk2")
@@ -43,6 +46,7 @@ texture = ExtResource("1_uwrxv")
 
 [node name="RigidBody2D2" parent="." unique_id=707908172 instance=ExtResource("4_lbhrr")]
 position = Vector2(835, 402)
+mass = 0.17
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=892732584]
 
@@ -64,15 +68,43 @@ shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Table" type="Node2D" parent="." unique_id=225742357]
 
-[node name="Pocket" parent="Table" unique_id=2089654417 instance=ExtResource("5_iywne")]
-position = Vector2(616.00006, 164)
-
 [node name="Cushon" parent="Table" unique_id=520861719 instance=ExtResource("6_p57ef")]
-position = Vector2(630, 103.000015)
+position = Vector2(626.00006, 103.00001)
 scale = Vector2(6.2814026, 0.28544468)
+physics_material_override = SubResource("PhysicsMaterial_2xhk2")
 
 [node name="Cushon2" parent="Table" unique_id=87228791 instance=ExtResource("6_p57ef")]
 position = Vector2(645, 320)
 rotation = 0.66046256
 scale = Vector2(0.7973953, 0.42790642)
 physics_material_override = SubResource("PhysicsMaterial_p57ef")
+
+[node name="Cushon3" parent="Table" unique_id=910032314 instance=ExtResource("6_p57ef")]
+position = Vector2(640, 545)
+scale = Vector2(6.2814026, 0.28544468)
+
+[node name="Cushon4" parent="Table" unique_id=1806967761 instance=ExtResource("6_p57ef")]
+position = Vector2(233, 322)
+scale = Vector2(0.1941521, 4.643226)
+
+[node name="Cushon5" parent="Table" unique_id=1638103763 instance=ExtResource("6_p57ef")]
+position = Vector2(1030, 313)
+scale = Vector2(0.1941521, 4.643226)
+
+[node name="Pocket" parent="Table" unique_id=2089654417 instance=ExtResource("5_iywne")]
+position = Vector2(625.00006, 123.99999)
+
+[node name="Pocket2" parent="Table" unique_id=2114821435 instance=ExtResource("5_iywne")]
+position = Vector2(625.00006, 526.99994)
+
+[node name="Pocket3" parent="Table" unique_id=801795324 instance=ExtResource("5_iywne")]
+position = Vector2(1011, 124)
+
+[node name="Pocket4" parent="Table" unique_id=1171417605 instance=ExtResource("5_iywne")]
+position = Vector2(1011, 526.99994)
+
+[node name="Pocket5" parent="Table" unique_id=2035013205 instance=ExtResource("5_iywne")]
+position = Vector2(248.00003, 124)
+
+[node name="Pocket6" parent="Table" unique_id=1974172953 instance=ExtResource("5_iywne")]
+position = Vector2(248.00003, 526.99994)
