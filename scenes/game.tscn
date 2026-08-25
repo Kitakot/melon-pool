@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ci8ddphdysbm8" path="res://scenes/player_ball.gd" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://b2nctyfw0lab4" path="res://Objects/Ball.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://fwl8ln380t7b" path="res://Objects/pocket.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://v5ctcps118e0" path="res://Objects/cushon.tscn" id="6_p57ef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2xhk2"]
 radius = 16.0
@@ -20,23 +21,7 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lbhrr"]
-bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(900, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
-size = Vector2(20, 450)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iywne"]
-bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
-size = Vector2(20, 450)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4gx2"]
-size = Vector2(900, 20)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p57ef"]
 
 [node name="Node2D" type="Node2D" unique_id=874810127]
 
@@ -79,49 +64,15 @@ shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Table" type="Node2D" parent="." unique_id=225742357]
 
-[node name="CushonTop" type="StaticBody2D" parent="Table" unique_id=857030156]
-position = Vector2(616, 127)
-physics_material_override = SubResource("PhysicsMaterial_lbhrr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/CushonTop" unique_id=271410761]
-shape = SubResource("RectangleShape2D_iywne")
-
-[node name="Icon" type="Sprite2D" parent="Table/CushonTop" unique_id=281186981]
-scale = Vector2(7.2, 0.156)
-texture = ExtResource("1_uwrxv")
-
-[node name="CushonRight" type="StaticBody2D" parent="Table" unique_id=665857760]
-position = Vector2(1086, 363)
-physics_material_override = SubResource("PhysicsMaterial_lbhrr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/CushonRight" unique_id=1413495790]
-shape = SubResource("RectangleShape2D_lbhrr")
-
-[node name="Icon" type="Sprite2D" parent="Table/CushonRight" unique_id=2129328974]
-scale = Vector2(0.156, 3.6)
-texture = ExtResource("1_uwrxv")
-
-[node name="CushonRight2" type="StaticBody2D" parent="Table" unique_id=1227007184]
-position = Vector2(147, 363)
-physics_material_override = SubResource("PhysicsMaterial_iywne")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/CushonRight2" unique_id=920839212]
-shape = SubResource("RectangleShape2D_p57ef")
-
-[node name="Icon" type="Sprite2D" parent="Table/CushonRight2" unique_id=878807838]
-scale = Vector2(0.156, 3.6)
-texture = ExtResource("1_uwrxv")
-
-[node name="CushonBottom" type="StaticBody2D" parent="Table" unique_id=1747859462]
-position = Vector2(619, 600)
-physics_material_override = SubResource("PhysicsMaterial_lbhrr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/CushonBottom" unique_id=2023566752]
-shape = SubResource("RectangleShape2D_a4gx2")
-
-[node name="Icon" type="Sprite2D" parent="Table/CushonBottom" unique_id=495534325]
-scale = Vector2(7.2, 0.156)
-texture = ExtResource("1_uwrxv")
-
 [node name="Pocket" parent="Table" unique_id=2089654417 instance=ExtResource("5_iywne")]
 position = Vector2(616.00006, 164)
+
+[node name="Cushon" parent="Table" unique_id=520861719 instance=ExtResource("6_p57ef")]
+position = Vector2(630, 103.000015)
+scale = Vector2(6.2814026, 0.28544468)
+
+[node name="Cushon2" parent="Table" unique_id=87228791 instance=ExtResource("6_p57ef")]
+position = Vector2(645, 320)
+rotation = 0.66046256
+scale = Vector2(0.7973953, 0.42790642)
+physics_material_override = SubResource("PhysicsMaterial_p57ef")

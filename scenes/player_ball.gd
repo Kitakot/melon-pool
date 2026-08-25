@@ -5,7 +5,7 @@ var ready_to_shoot = true
 var mouse_start_pos = Vector2()
 var shot_vector = Vector2()
 @export var shot_power = 1.0
-@export var epsilon = 10
+@export var velocity_epsilon = 10
 
 func _ready() -> void:
 	add_to_group("balls")
@@ -26,6 +26,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	print(linear_velocity.length_squared())
-	if linear_velocity.length_squared() <= epsilon:
+	if linear_velocity.length_squared() <= velocity_epsilon:
 		linear_velocity = Vector2(0, 0)
 		ready_to_shoot = true
