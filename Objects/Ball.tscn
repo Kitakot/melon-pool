@@ -8,7 +8,9 @@
 radius = 16.0
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=707908172]
+mass = 0.17
 physics_material_override = ExtResource("1_p1o3b")
+linear_damp = 1.0
 angular_damp = 100.0
 script = ExtResource("2_ftl80")
 
