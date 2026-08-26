@@ -23,11 +23,11 @@ normal = Vector2(-1, 0)
 
 [node name="Node2D" type="Node2D" unique_id=874810127]
 
-[node name="Cueball" parent="." unique_id=2061730772 groups=["balls", "cueballs"] instance=ExtResource("1_lbhrr")]
+[node name="Cueball" parent="." unique_id=2061730772 instance=ExtResource("1_lbhrr")]
 modulate = Color(0.26666665, 1, 0, 1)
 position = Vector2(493.761, 402)
 
-[node name="RigidBody2D2" parent="." unique_id=707908172 groups=["balls", "must_sink_balls"] instance=ExtResource("4_lbhrr")]
+[node name="RigidBody2D2" parent="." unique_id=707908172 instance=ExtResource("4_lbhrr")]
 position = Vector2(835, 402)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=892732584]
@@ -91,19 +91,19 @@ position = Vector2(248.00003, 124)
 [node name="Pocket6" parent="Table" unique_id=1974172953 instance=ExtResource("5_iywne")]
 position = Vector2(248.00003, 526.99994)
 
-[node name="RigidBody2D" parent="." unique_id=1781729511 groups=["balls", "must_sink_balls"] instance=ExtResource("4_lbhrr")]
+[node name="RigidBody2D" parent="." unique_id=1781729511 instance=ExtResource("4_lbhrr")]
 position = Vector2(865, 388)
 
-[node name="RigidBody2D3" parent="." unique_id=1762667 groups=["balls", "must_sink_balls"] instance=ExtResource("4_lbhrr")]
+[node name="RigidBody2D3" parent="." unique_id=1762667 instance=ExtResource("4_lbhrr")]
 position = Vector2(865, 419)
 
-[node name="RigidBody2D4" parent="." unique_id=1226366810 groups=["balls", "must_sink_balls"] instance=ExtResource("4_lbhrr")]
+[node name="RigidBody2D4" parent="." unique_id=1226366810 instance=ExtResource("4_lbhrr")]
 position = Vector2(892, 378)
 
-[node name="RigidBody2D5" parent="." unique_id=483628999 groups=["balls", "must_sink_balls"] instance=ExtResource("4_lbhrr")]
+[node name="RigidBody2D5" parent="." unique_id=483628999 instance=ExtResource("4_lbhrr")]
 position = Vector2(893, 402)
 
-[node name="RigidBody2D6" parent="." unique_id=304532697 groups=["balls", "must_sink_balls"] instance=ExtResource("4_lbhrr")]
+[node name="RigidBody2D6" parent="." unique_id=304532697 instance=ExtResource("4_lbhrr")]
 position = Vector2(892, 431)
 
 [node name="GameManager" type="Node" parent="." unique_id=19679418]

@@ -26,6 +26,12 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Melon Pool"
 
+[global_group]
+
+balls=""
+must_sink_balls=""
+cueballs=""
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

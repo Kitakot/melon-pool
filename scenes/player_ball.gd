@@ -25,7 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			linear_velocity = - shot_vector
 
 func _physics_process(delta: float) -> void:
-	print(linear_velocity.length_squared())
+	#print(linear_velocity.length_squared())
 	if linear_velocity.length_squared() <= velocity_epsilon:
 		linear_velocity = Vector2(0, 0)
 		ready_to_shoot = true

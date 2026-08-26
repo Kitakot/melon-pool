@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dvb4hcfeg2n68"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dh01dnmy81n80" path="res://materials/ball_material.tres" id="1_ukxv5"]
+[ext_resource type="Script" uid="uid://ci8ddphdysbm8" path="res://scenes/player_ball.gd" id="2_goqbk"]
+[ext_resource type="Texture2D" uid="uid://26kf6cb5ihpm" path="res://icon.svg" id="3_3pqpu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xhk2"]
+radius = 16.0
+
+[node name="Cueball" type="RigidBody2D" unique_id=2061730772]
+mass = 0.17
+physics_material_override = ExtResource("1_ukxv5")
+linear_velocity = Vector2(50, 0)
+linear_damp = 1.0
+angular_damp = 100.0
+script = ExtResource("2_goqbk")
+shot_power = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333406433]
+shape = SubResource("CircleShape2D_2xhk2")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1851622792]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_3pqpu")
